@@ -33,11 +33,19 @@ angular.module('starter.controllers', [])
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
 
+    if($scope.loginData.username == 'admin' && $scope.loginData.password == 'admin'){
+        $timeout(function() {
+            $scope.closeLogin();
+        }, 1000);
+    }else{
+        $scope.modal.show();
+        $scope.error = 'wrong username or password!';
+    }
+
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+
+
   };
 })
 

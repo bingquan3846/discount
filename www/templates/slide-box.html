@@ -1,9 +1,9 @@
-<ion-view view-title="Slide Projects" drag-content="false">
+<ion-view view-title="Slide Projects">
 <ion-content has-header="true" drag-content="false" padding="true">
 
-    <ion-slide-box show-pager="false" drag-content="false">
+    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
 
-        <ion-slide ng-repeat="project in projects">
+        <ion-slide ng-repeat="project in projects" >
             <div class="card">
                 <div class="item item-text-wrap">
                     <h2><strong>{{project.title}}</strong></h2>
