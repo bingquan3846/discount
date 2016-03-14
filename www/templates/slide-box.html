@@ -1,0 +1,19 @@
+<ion-view view-title="Slide Projects" drag-content="false">
+<ion-content has-header="true" drag-content="false" padding="true">
+
+    <ion-slide-box show-pager="false" drag-content="false">
+
+        <ion-slide ng-repeat="project in projects">
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <h2><strong>{{project.title}}</strong></h2>
+                    <p>
+                        {{project.description}}
+                    </p>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slide-box>
+
+</ion-content>
+</ion-view>
