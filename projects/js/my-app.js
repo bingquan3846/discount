@@ -24,7 +24,8 @@ myApp.onPageInit('setting', function (page) {
 
 var isLogin = false;
 if(!isLogin){
-    myApp.popup('.popup-login');
+    //myApp.popup('.popup-login');
+    myApp.loginScreen();
 }
 
 $$('#login').on('click', function(){
