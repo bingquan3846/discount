@@ -11,15 +11,22 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-// Callbacks to run specific code for specific pages, for example for About page:
+var settings = JSON.parse('{"positiveKeywords" : "", "negativeKewwords": "", "category": "default", "place": "", "template": "" }');
+if(typeof(Storage)!=="undefined"){
+    localStorage.setItem("settings",settings);
+}
+
 myApp.onPageInit('setting', function (page) {
     // run createContentPage func after link was clicked
-    console.log('settings');
+    var formData = myApp.formToJSON('#settings-form');
+    console.log(JSON.stringify(formData));
 });
+
 var isLogin = false;
 if(!isLogin){
     myApp.popup('.popup-login');
 }
+
 $$('#login').on('click', function(){
     isLogin = true;
     $$('#login-close').click();
@@ -35,15 +42,14 @@ ptrContent.on('refresh', function (e) {
         ptrContent.find('.swiper-container')
             .css('visibility', 'hidden')
             .css('height', '0');
-//        var itemHTML = '<div  data-pagination=".swiper-pagination .hidden" data-pagination-hide="true" class="swiper-container swiper-init ks-demo-slider"><div class="swiper-pagination"></div><div class="swiper-wrapper"><div class="swiper-slide">Slide 1</div><div class="swiper-slide">Slide 2</div></div></div>';
+
         var itemHTML = compiledProjectsTemplate({
-                data: [{id: Math.random(), title: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)},{id: Math.random(),title: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)}]}
+                data: [{id: Math.random(), title: Math.random().toString(36).replace(/[^a-z]+/g, "").substr(0, 5)},{id: Math.random(),title: Math.random().toString(36).replace(/[^a-z]+/g, "").substr(0, 5)}]}
                 );
 
         ptrContent.append(itemHTML);
         var slider = new Swiper('.swiper-container');
 
-        //ptrContent.remove('#slider');
         myApp.pullToRefreshDone();
     }, 2000);
 });

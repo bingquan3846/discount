@@ -12,7 +12,7 @@
 <div data-page="setting" class="page">
 <!-- Scrollable page content-->
 <div class="page-content">
-<div class="list-block">
+ <form id="settings-form" class="list-block store-data">
     <ul>
         <li class="accordion-item"><a href="#" class="item-content item-link">
             <div class="item-inner">
@@ -41,7 +41,7 @@
                     <ul>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="Entwicklung" checked="checked"/>
+                                <input type="checkbox" name="category" value="1" checked="checked"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Entwicklung</div>
@@ -50,7 +50,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="Grafik, Content, Medien"/>
+                                <input type="checkbox" name="category" value="2"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title"> Grafik, Content, Medien</div>
@@ -59,7 +59,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="IT-Infrastruktur"/>
+                                <input type="checkbox" name="category" value="3"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title"> IT-Infrastruktur</div>
@@ -68,7 +68,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="Beratung & Management"/>
+                                <input type="checkbox" name="category" value="4"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Beratung & Management</div>
@@ -77,7 +77,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="SAP" />
+                                <input type="checkbox" name="category" value="5" />
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">SAP</div>
@@ -86,7 +86,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="SAP"/>
+                                <input type="checkbox" name="category" value="6"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Ingenieurwesen</div>
@@ -108,7 +108,7 @@
                     <ul>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="108" checked="true"/>
+                                <input type="checkbox" name="place" value="108"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Brandenburg</div>
@@ -117,7 +117,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="109"/>
+                                <input type="checkbox" name="place" value="109"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title"> Berlin </div>
@@ -126,7 +126,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="110"/>
+                                <input type="checkbox" name="place" value="110"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Baden-Württemberg</div>
@@ -135,7 +135,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="111" />
+                                <input type="checkbox" name="place" value="111" />
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Bayern</div>
@@ -144,7 +144,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="112"/>
+                                <input type="checkbox" name="place" value="112"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Bremen</div>
@@ -153,7 +153,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="113"/>
+                                <input type="checkbox" name="place" value="113"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Hessen</div>
@@ -162,7 +162,7 @@
                         </li>
                         <li>
                             <label class="label-checkbox item-content">
-                                <input type="checkbox" name="ks-checkbox" value="114"/>
+                                <input type="checkbox" name="place" value="114"/>
                                 <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">Hamburg</div>
@@ -181,7 +181,7 @@
             <div class="accordion-item-content">
                 <div class="content-block">
                     <div class="item-input">
-                        <textarea>
+                        <textarea name="template">
 [Anrede],
 ich interessiere mich für die ausgeschriebene Position. Bitte
 nehmen Sie zu mir Kontakt auf um alles weitere zu besprechen.
@@ -189,7 +189,7 @@ Mit freundlichen Grüßen
 {NAME DES USERS} (ersetzen wir)
                         </textarea>
                         <label class="label-checkbox item-content">
-                            <input type="checkbox" name="ks-checkbox" value="114"/>
+                            <input type="checkbox" name="attachment" value="1"/>
                             <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
                             <div class="item-inner">
                                 <div class="item-title">Anhänge versenden</div>
@@ -200,7 +200,7 @@ Mit freundlichen Grüßen
         </li>
 
     </ul>
-</div>
+</form>
 </div>
 </div>
 </div>
