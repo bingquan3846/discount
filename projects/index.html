@@ -1,295 +1,636 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Freelancermap</title>
-    <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
-    <!-- Path to your custom app styles-->
+    <meta name="theme-color" content="#2196f3">
+    <title>Framework7 Material</title>
+    <link rel="stylesheet" href="css/framework7.material.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/my-app.css">
-    <link href="css/font-awesome.css" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Status bar overlay for fullscreen mode-->
-    <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <p>Left panel content goes here</p>
-      </div>
-    </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>Right panel content goes here</p>
-      </div>
-    </div>
-    <!-- Views-->
-    <div class="views ">
-      <!-- Your main view, should have "view-main" class-->
-      <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar theme-white ">
-          <div class="navbar-inner">
-            <!-- We have home navbar without left link-->
-            <div class="center sliding"><img src="img/freelancermap_logo.svg" width="128"/> </div>
-            <div class="right">
-              <!-- Right link contains only icon - additional "icon-only" class--><a href="setting.html" class="item-link"> <i class="fa fa-cog"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
-          <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page">
-              <div class="page-content pull-to-refresh-content" data-ptr-distance="55">
-                  <div class="pull-to-refresh-layer">
-                      <div class="preloader"></div>
-                      <div class="pull-to-refresh-arrow"></div>
-                  </div>
-                  <div data-pagination=".swiper-pagination .hidden" data-pagination-hide="true" class="swiper-container swiper-init">
-                      <div class="swiper-pagination"></div>
-                      <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                             <div class="card">
-                                 <div class="card-header">Berater für Software Studie Einführung UNIVERSAL der Firma Consor (m/w)</div>
-                                 <div class="card-content">
-                                     <div class="card-content-inner">
-                                         <p class="color-gray">Eingestellt:
-                                             15.03.2016 10:41
-                                         </p>
-                                         <p class="color-gray">Vertragsart:
-                                             Vor Ort
-                                         </p>
-                                         <p class="color-gray">Start:
-                                             04/2016
-                                         </p>
-                                         <p class="color-gray">Dauer:
-                                             3 Monate (Verlängerung möglich)
-                                         </p>
-                                         <p class="color-gray">Von:
-                                             VARIUS IT GmbH & Co. KG
-                                         </p>
-                                         <p class="color-gray">Ort:
-                                             NRW
-                                         </p>
-                                         <p class="color-gray">Land:
-                                             Deutschland
-                                         </p>
-
-                                         <div class="list-block accordion-list">
-                                             <ul>
-                                                 <li class="accordion-item">
-                                                     <a href="" class="item-link item-content">
-                                                         <div class="item-inner">
-                                                             <div class="item-title">Projektbeschreibung</div>
-                                                         </div>
-                                                     </a>
-                                                     <div class="accordion-item-content">
-                                                         <div style="padding:0 15px">
-                                                             <p>für einen bestehenden Auftrag bei einem unserer Direktkunden suchen wir eine(n)<p>
-
-                                                             Berater für Software Studie Einführung UNIVERSAL der Firma Consor (m/w)<br/>
-                                                             Beginn: a.s.a.p. / Dauer: 3 Monate plus Option auf Verlängerung / Ort: NRW / Projekt-ID: 2777<br/>
-
-                                                             Als Berater für Software Studie Einführung UNIVERSAL der Firma Consor werden Sie unseren Kunden über die Nutzung des Produktes sowie den Umfang und die Möglichkeiten beraten.
-
-                                                          </div>
-
-                                                     </div>
-                                                 </li>
-                                             </ul>
-                                         </div>
-
-                                     </div>
-                                 </div>
-                                 <div class="card-footer">
-                                     <a href="#" class="link wishlist"><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
-                                     <a href="#" class="link apply"  onclick="apply(1)" ><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
-                                 </div>
-                             </div>
-                          </div>
-                          <div class="swiper-slide">Slide 2</div>
-                          <div class="swiper-slide">Slide 3</div>
-                          <div class="swiper-slide">Slide 4</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="popup popup-apply">
-        <div class="content-block">
-            <form id="my-form" class="list-block">
-                <ul>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Name</div>
-                                <div class="item-input">
-                                    <input type="text" name="name" placeholder="Your name">
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Email</div>
-                                <div class="item-input">
-                                    <input type="text" name="email" placeholder="Email">
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Betreff</div>
-                                <div class="item-input">
-                                    <input type="text" name="subject" placeholder="subject">
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Anschreiben</div>
-                                <div class="item-input">
-                                   <textarea name="content"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <p><a href="#" class="button ">Abschicken</a></p>
-                <a href="#" class="button close-popup">Abbrechen</a>
-            </form>
-        </div>
-    </div>
-    <div class="login-screen">
-        <!-- Default view-page layout -->
-        <div class="view">
-            <div class="page">
-                <!-- page-content has additional login-screen content -->
-                <div class="page-content login-screen-content">
-                    <div class="login-screen-title">Freelancermap Login</div>
-                    <!-- Login form -->
-                    <form>
-                        <div class="list-block">
-                            <ul>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <div class="item-title label">Username</div>
-                                        <div class="item-input">
-                                            <input type="text" name="username" placeholder="Username">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <div class="item-title label">Password</div>
-                                        <div class="item-input">
-                                            <input type="password" name="password" placeholder="Password">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="list-block">
-                            <ul>
-                                <li>
-                                    <a href="#" class="item-link list-button" id="login">Sign In</a>
-                                    <a href="#" class="close-login-screen" id="login-close"></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </form>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="icon" href="img/icon.png">
+</head>
+<body>
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
+<div class="views">
+<div class="view view-main">
+<div class="pages navbar-fixed">
+<div data-page="index" class="page">
+<div class="navbar theme-white">
+    <div class="navbar-inner">
+        <div class="center sliding"><img src="img/freelancermap_logo.svg" width="128"/> </div>
+        <div class="right">
+            <!-- Right link contains only icon - additional "icon-only" class-->
+            <a href="settings.html" class="item-link">
+                <div class="item-content">
+                    <div class="item-media"><i class="fa fa-cog"></i></div>
                 </div>
-            </div>
+            </a>&nbsp;
         </div>
     </div>
-    <script type="text/template7" id="projects">
-        <div  data-pagination=".swiper-pagination .hidden" data-pagination-hide="true" class="swiper-container swiper-init">
-            <div class="swiper-pagination"></div>
-            <div class="swiper-wrapper">
-                {{#each data}}
-                <div class="swiper-slide">
-                    <div class="card">
-                        <div class="card-header">{{title}}</div>
-                        <div class="card-content">
-                            <div class="card-content-inner">
-                                <p class="color-gray">Eingestellt:
-                                    15.03.2016 10:41
-                                </p>
-                                <p class="color-gray">Vertragsart:
-                                    Vor Ort
-                                </p>
-                                <p class="color-gray">Start:
-                                    04/2016
-                                </p>
-                                <p class="color-gray">Dauer:
-                                    3 Monate (Verlängerung möglich)
-                                </p>
-                                <p class="color-gray">Von:
-                                    VARIUS IT GmbH & Co. KG
-                                </p>
-                                <p class="color-gray">Ort:
-                                    NRW
-                                </p>
-                                <p class="color-gray">Land:
-                                    Deutschland
-                                </p>
+</div>
+<div class="page-content">
+<div id="swiperContent">
+<div data-pagination=".swiper-pagination .hidden" data-pagination-hide="true" class="swiper-container">
+<div class="swiper-pagination"></div>
+<div class="swiper-wrapper">
 
-                                <div class="list-block accordion-list">
-                                    <ul>
-                                        <li class="accordion-item">
-                                            <a href="" class="item-link item-content">
-                                                <div class="item-inner">
-                                                    <div class="item-title">Projektbeschreibung</div>
-                                                </div>
-                                            </a>
-                                            <div class="accordion-item-content">
-                                                <div style="padding:0 15px">
-                                                    <p>für einen bestehenden Auftrag bei einem unserer Direktkunden suchen wir eine(n)<p>
+<div class="swiper-slide">
+    <div class="card">
+        <div class="card-header">Administration unter HP TRU64</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <p class="color-gray">Eingestellt:
+                    2005-08-17 15:10:01.000000
+                </p>
+                <p class="color-gray">Vertragsart:
+                    CONTRACT
+                </p>
+                <p class="color-gray">Start:
 
-                                                    Berater für Software Studie Einführung UNIVERSAL der Firma Consor (m/w)<br/>
-                                                    Beginn: a.s.a.p. / Dauer: 3 Monate plus Option auf Verlängerung / Ort: NRW / Projekt-ID: 2777<br/>
+                </p>
+                <p class="color-gray">Dauer:
 
-                                                    Als Berater für Software Studie Einführung UNIVERSAL der Firma Consor werden Sie unseren Kunden über die Nutzung des Produktes sowie den Umfang und die Möglichkeiten beraten.
+                </p>
+                <p class="color-gray">Von:
+                    BSF Consulting GmbH
+                </p>
+                <p class="color-gray">Ort:
+                    Niederlande
+                </p>
+                <p class="color-gray">Land:
+                    Deutschland
+                </p>
 
-                                                </div>
+                <div class="list-block accordion-list">
+                    <ul>
+                        <li class="accordion-item">
+                            <a href="" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Projektbeschreibung</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div style="padding:0 15px">
 
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <br>
+                                    <br>      Niederlande
+                                    <br>
+                                    <br>Für ein Kundenprojekt in den Niederlanden suchen wir zur Festanstellung oder auf freiberuflicher Basis Unterstützung wie folgt:
+                                    <br>
+                                    <br>Aufgabenbeschreibung:
+                                    <br>
+                                    <br>Administration unter
+                                    <br>
+                                    <br>HP TRU64
+                                    <br>
+                                    <br>Zeitraum:  kurzfristig – August 2005 – für min. 3 Monate m.O.a.V.
+                                    <br>
+                                    <br>Sind Sie interessiert? Haben Sie eine Empfehlung? In diesem Fall würden wir uns sehr über die Übersendung Ihres ausführlichen bzw. aktualisierten Profils bitte NUR PER MAIL mit Angabe der gewünschten Konditionen freuen.
                                 </div>
 
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="link wishlist" ><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
-                            <a href="#" class="link apply" onclick="apply({{id}})"><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
-                        </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+    <div style="margin:10px">
+        <p>
+            <a href="#" class="button button-round active apply" onclick="apply(1962)"><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
+        </p>
+        <p>
+            <a href="#" class="button button-round active wishlist" onclick="addWishlist(1962)"><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
+        </p>
+    </div>
+</div>
+
+<div class="swiper-slide">
+    <div class="card">
+        <div class="card-header">Administration, EMC Storage</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <p class="color-gray">Eingestellt:
+                    2005-08-17 14:10:01.000000
+                </p>
+                <p class="color-gray">Vertragsart:
+                    CONTRACT
+                </p>
+                <p class="color-gray">Start:
+
+                </p>
+                <p class="color-gray">Dauer:
+
+                </p>
+                <p class="color-gray">Von:
+                    BSF Consulting GmbH
+                </p>
+                <p class="color-gray">Ort:
+                    Frankfurt
+                </p>
+                <p class="color-gray">Land:
+                    Deutschland
+                </p>
+
+                <div class="list-block accordion-list">
+                    <ul>
+                        <li class="accordion-item">
+                            <a href="" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Projektbeschreibung</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div style="padding:0 15px">
+
+                                    <br>
+                                    <br>      Frankfurt
+                                    <br>
+                                    <br>Für ein Kundenprojekt in Frankfurt suchen wir sehr gern zur Festanstellung (oder auf freiberuflicher Basis) Unterstützung wie folgt:
+                                    <br>
+                                    <br>Aufgabenbeschreibung:
+                                    <br>
+                                    <br>Administration
+                                    <br>
+                                    <br>EMC Storage
+                                    <br>
+                                    <br>Zeitraum:  September 2005 für 12 Monate
+                                    <br>
+                                    <br>Sind Sie interessiert? In diesem Fall würden wir uns sehr über die Übersendung Ihres ausführlichen bzw. aktualisierten Profils bitte NUR PER MAIL mit Angabe der gewünschten Konditionen freuen.
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+    <div style="margin:10px">
+        <p>
+            <a href="#" class="button button-round active apply" onclick="apply(1947)"><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
+        </p>
+        <p>
+            <a href="#" class="button button-round active wishlist" onclick="addWishlist(1947)"><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
+        </p>
+    </div>
+</div>
+
+<div class="swiper-slide">
+    <div class="card">
+        <div class="card-header">Administration/Rollout SINA-Boxen</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <p class="color-gray">Eingestellt:
+                    2010-05-31 11:01:54.000000
+                </p>
+                <p class="color-gray">Vertragsart:
+                    CONTRACT
+                </p>
+                <p class="color-gray">Start:
+                    06/2010
+                </p>
+                <p class="color-gray">Dauer:
+
+                </p>
+                <p class="color-gray">Von:
+                    BSF Consulting GmbH
+                </p>
+                <p class="color-gray">Ort:
+                    Bonn
+                </p>
+                <p class="color-gray">Land:
+                    Deutschland
+                </p>
+
+                <div class="list-block accordion-list">
+                    <ul>
+                        <li class="accordion-item">
+                            <a href="" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Projektbeschreibung</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div style="padding:0 15px">
+                                    BSF Consulting GmbH, seit 12 Jahren erfolgreich auf dem Markt, ist ein IT/TK-Unternehmen mit Sitz in Eschborn, das sich auf die Planung und Realisierung anspruchsvoller Software- und Netzwerkprojekte im gesamten Bundesgebiet spezialisiert hat.
+                                    <br>
+                                    <br>Für ein Kundenprojekt in Bonn suchen wir zur Festanstellung oder auf freiberuflicher Basis (w/m) Unterstützung wie folgt:
+                                    <br>
+                                    <br>Administration/Rollout SINA-Boxen
+                                    <br>
+                                    <br>Hintergrundinformation
+                                    <br>Der Kunde plant im Rahmen einer WAN-Migration auf MPLS die Einführung von Verschlüsselungssystemen auf Basis von SINA-Boxen (Secunet)
+                                    <br>?Ziel der vorliegenden Unterstützungsleistungen ist die Verstärkung des Teams vor Ort bei der Vorbereitung und Konfiguration der Verschlüsselungsboxen für den Rollout, um den Zeitplan bis Ende 2010 einhalten zu können.
+                                    <br>
+                                    <br>Projektaktivitäten
+                                    <br>?Konfiguration der SINA-Boxen nach Vorgaben des Kunden
+                                    <br>?Durchführung von Tests und Qualitätssicherungsmaßnahmen zur Sicherstellung der korrekten Funktionsfähigkeit vor dem Versand
+                                    <br>?Einstellen von Trouble Tickets
+                                    <br>?Abstimmungen mit dem Projektteam sowie den externen Dienstleistern
+                                    <br>?Dokumentation des Projektfortschritts in den eingesetzten Operation Support- und Bestands-Systemen
+                                    <br>
+                                    <br>Anforderungsprofil
+                                    <br>?Praktische Erfahrung im Bereich SINA-Boxen insbesondere mit der Konfiguration und dem Management der Systeme
+                                    <br>?Know-how beim Betrieb und Management von mittleren bis größeren Netzwerk- und Securitylösungen (mehrere hundert Systeme)
+                                    <br>?Gute Kenntnisse der IP-Netzwerktechnologien z.B. MPLS, QoS etc.
+                                    <br>?Optional: Know-how im Bereich Cisco-Systeme im LAN- und WAN-Umfeld
+                                    <br>
+                                    <br>Softskills
+                                    <br>?Kommunikatives Auftreten beim Kunden
+                                    <br>?Eigenständiges und zielorientiertes Arbeiten
+                                    <br>
+                                    <br>Zeitraum:
+                                    <br>?Start: Juni 2010
+                                    <br>?Ende: 31. August 2010 (Verlängerung bis Ende 2010 geplant)
+                                    <br>?Aufwand: 3-5 Tage / Woche
+                                    <br>
+                                    <br>Sind Sie interessiert? In diesem Fall würden wir uns sehr über die Übersendung Ihres ausführlichen bzw. aktualisierten Profils bitte NUR PER MAIL mit Angabe der gewünschten Konditionen freuen. Bitte beachten Sie auch die weiteren Job-Angebote auf unserer web-site
+                                    <br>http://www.bsf-consulting.de/web/jobs/wirsuchensie/index.php
+                                    <br>
+                                    <br>Hinweis:
+                                    <br>Eine Veröffentlichung unserer Projektanfrage auf branchenüblichen Projektplattformen (z. B. XING, Projektwerk etc.) ist nur nach ausdrücklicher schriftlicher Genehmigung gestattet.
+                                    <br>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+    <div style="margin:10px">
+        <p>
+            <a href="#" class="button button-round active apply" onclick="apply(153240)"><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
+        </p>
+        <p>
+            <a href="#" class="button button-round active wishlist" onclick="addWishlist(153240)"><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
+        </p>
+    </div>
+</div>
+
+<div class="swiper-slide">
+    <div class="card">
+        <div class="card-header">Administrator  - IT, Tools, Config-Management</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <p class="color-gray">Eingestellt:
+                    2007-08-07 14:05:12.000000
+                </p>
+                <p class="color-gray">Vertragsart:
+                    CONTRACT
+                </p>
+                <p class="color-gray">Start:
+                    10/2007
+                </p>
+                <p class="color-gray">Dauer:
+
+                </p>
+                <p class="color-gray">Von:
+                    BSF Consulting GmbH
+                </p>
+                <p class="color-gray">Ort:
+                    München
+                </p>
+                <p class="color-gray">Land:
+                    Deutschland
+                </p>
+
+                <div class="list-block accordion-list">
+                    <ul>
+                        <li class="accordion-item">
+                            <a href="" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Projektbeschreibung</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div style="padding:0 15px">
+
+                                    <br>Für ein Kundenprojekt in München suchen wir zur Festanstellung oder auf freiberuflicher Basis (w/m) Unterstützung wie folgt:
+                                    <br>
+                                    <br>Administrator (IT, Tools, Config-Mgmt)
+                                    <br>
+                                    <br>Projektbeschreibung / Tasks:
+                                    <br>We are looking for responsible support in administration, maintenance and enhancements of the project\'s Document and Configuration Management tools.
+                                    <br>
+                                    <br>The main tasks are as follows:
+                                    <br>-	develop / install / enhance tools
+                                    <br>-	Administer tools and server
+                                    <br>-	monitor the team\'s adherence to the processes (which are already defined)
+                                    <br>
+                                    <br>a. Configuration Management (CM)
+                                    <br>-	Advance the existing SW CM infrastructure (modifying repository structure, writing svn hooks, writing libraries to support SW development)
+                                    <br>-	Monitor the team\'s compliance to the processes
+                                    <br>-	Support the improvement of the HW CM processes
+                                    <br>-	Select / develop / Install HW CM tools
+                                    <br>-	Documentation of developed / improved SW
+                                    <br>
+                                    <br>b. Document Management
+                                    <br>-	Establish an automated document numbering system based on the document numbering directives of diverse projects
+                                    <br>-	Select / implement document management system according to the department\'s needs
+                                    <br>-	Monitor document generation by team members
+                                    <br>-	Documentation of developed / improved SW
+                                    <br>
+                                    <br>c. System Administration
+                                    <br>-	Installation and maintenance of Configuration / Document Management tools
+                                    <br>-	Documentation of developed / improved administrative SW
+                                    <br>
+                                    <br>Skills:
+                                    <br>MUST-HAVE:
+                                    <br>Apache
+                                    <br>CVS or SubVersion
+                                    <br>Eclipse
+                                    <br>HTTPS
+                                    <br>MS Office
+                                    <br>Perl
+                                    <br>Ruby
+                                    <br>Shell-Scripts
+                                    <br>Unix
+                                    <br>Windows
+                                    <br>XML
+                                    <br>Durchsetzungsvermögen
+                                    <br>Kommunikationsfähigkeit
+                                    <br>Englisch
+                                    <br>Sicherheitsüberprüfung erforderlich
+                                    <br>
+                                    <br>Nice to have:
+                                    <br>C
+                                    <br>C++
+                                    <br>Java
+                                    <br>Polarion
+                                    <br>
+                                    <br>Zeitraum:
+                                    <br>Start: 01.10.2007
+                                    <br>Duration: 1 year, might be extended
+                                    <br>
+                                    <br>Sind Sie interessiert? In diesem Fall würden wir uns sehr über die Übersendung Ihres ausführlichen bzw. aktualisierten Profils bitte NUR PER MAIL mit Angabe der gewünschten Konditionen freuen. Bitte beachten Sie auch die weiteren Job-Angebote auf unserer web-site http://www.bsf-consulting.de/web/jobs/suchen/index.php
+                                    <br>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+    <div style="margin:10px">
+        <p>
+            <a href="#" class="button button-round active apply" onclick="apply(45812)"><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
+        </p>
+        <p>
+            <a href="#" class="button button-round active wishlist" onclick="addWishlist(45812)"><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
+        </p>
+    </div>
+</div>
+
+<div class="swiper-slide">
+    <div class="card">
+        <div class="card-header">Administrator (m/w) für die Softwareumgebung eines Softwareentwicklungs-Projektes</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <p class="color-gray">Eingestellt:
+                    2011-08-04 11:59:51.000000
+                </p>
+                <p class="color-gray">Vertragsart:
+                    CONTRACT
+                </p>
+                <p class="color-gray">Start:
+                    08/2011
+                </p>
+                <p class="color-gray">Dauer:
+
+                </p>
+                <p class="color-gray">Von:
+                    BSF Consulting GmbH
+                </p>
+                <p class="color-gray">Ort:
+                    Nürnberg
+                </p>
+                <p class="color-gray">Land:
+                    Deutschland
+                </p>
+
+                <div class="list-block accordion-list">
+                    <ul>
+                        <li class="accordion-item">
+                            <a href="" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Projektbeschreibung</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div style="padding:0 15px">
+                                    Für ein Kundenprojekt in Nürnberg suchen wir auf freiberuflicher Basis (w/m) oder zur Festanstellung Unterstützung wie folgt:
+                                    <br>
+                                    <br>Projektbeschreibung / Aufgaben:
+                                    <br>Administrator (m/w) für die Softwareumgebung eines Softwareentwicklungs-Projektes
+                                    <br>
+                                    <br>Ihre Aufgabe:
+                                    <br>Administration der Softwareentwicklungsumgebung auf Linux- und Windowssystemen bestehend aus folgenden Systemen bzw. Werkzeugen: · Weblogic · Eclipse · CVS · Ant (fall möglich auch Ivy) · Hudson · Oracle DB
+                                    <br>
+                                    <br>Projektkurzbeschreibung:
+                                    <br>Betreuung der Softwareentwicklungsumgebung eines großen Softwareentwicklungsprojekts Wir suchen KEINE SYSTEMADMINISTRATOREN und KEINE ENTWICKLER!
+                                    <br>
+                                    <br>Anforderung:
+                                    <br>·	Administrations-Knowhow zu Weblogic
+                                    <br>·	Administrations Know-how in mindestens 2 der folgenden Gebiete: Eclipse, CVS, Ant (falls möglich auch Ivy), Hudson, Oracle DB Administration/Optimierung must
+                                    <br>
+                                    <br>Sonstiges:
+                                    <br>·	Ausbildung (z.B. Fachinformatiker) oder Studium
+                                    <br>·	Berufserfahrung: 1 bis 3 Jahre
+                                    <br>·	Die Voraussetzungen für eine Sicherheitsüberprüfung Ü1 müssen erfüllt sein
+                                    <br>
+                                    <br>Projektsprache: deutsch
+                                    <br>
+                                    <br>Zeitraum: Beginn 01.09.2011 – Dauer 31.12.2011 + 1 Jahr Verlängerungsoption
+                                    <br>
+                                    <br>Sind Sie interessiert? In diesem Fall würden wir uns sehr über die Übersendung Ihres ausführlichen bzw. aktualisierten Profils bitte NUR PER MAIL mit Angabe der gewünschten Konditionen freuen. Bitte beachten Sie auch die weiteren Job-Angebote auf unserer web-site
+                                    <br>http://www.bsf-consulting.de/web/jobs/wirsuchensie/index.php
+                                    <br>
+                                    <br>
+                                    <br>Mit freundlichen Grüßen
+                                    <br>
+                                    <br>BSF Consulting GmbH
+                                    <br>Sales & Ressource Management
+                                    <br>Dorothea Rust
+                                    <br>Frankfurter Str. 63-69,
+                                    <br>65760 Eschborn
+                                    <br>
+                                    <br>Tel.: 06196 - 64080-40 (Fax: -69)
+                                    <br>rust@bsf-consulting.de
+                                    <br>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+    <div style="margin:10px">
+        <p>
+            <a href="#" class="button button-round active apply" onclick="apply(225796)"><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
+        </p>
+        <p>
+            <a href="#" class="button button-round active wishlist" onclick="addWishlist(225796)"><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
+        </p>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="login-screen">
+    <!-- Default view-page layout -->
+    <div class="view">
+        <div class="page">
+            <!-- page-content has additional login-screen content -->
+            <div class="page-content login-screen-content">
+                <div class="login-screen-title">Freelancermap Login</div>
+                <!-- Login form -->
+                <form>
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Username</div>
+                                    <div class="item-input">
+                                        <input type="text" name="username" placeholder="Username" value="michael.fossler">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Password</div>
+                                    <div class="item-input">
+                                        <input type="password" name="password" placeholder="Password" value="test">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                {{/each}}
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link list-button" id="login">Sign In</a>
+                                <a href="#" class="close-login-screen" id="login-close"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
             </div>
         </div>
-    </script>
-    <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-app.js"></script>
+    </div>
+</div>
+<script type="text/template7" id="projects">
+    {{#each projects}}
+    <div class="swiper-slide">
+        <div class="card">
+            <div class="card-header">{{title}}</div>
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <p class="color-gray">Eingestellt:
+                        {{created.date}}
+                    </p>
+                    <p class="color-gray">Vertragsart:
+                        {{contract}}
+                    </p>
+                    <p class="color-gray">Start:
+                        {{start}}
+                    </p>
+                    <p class="color-gray">Dauer:
+                        {{last}}
+                    </p>
+                    <p class="color-gray">Von:
+                        {{company}}
+                    </p>
+                    <p class="color-gray">Ort:
+                        {{city}}
+                    </p>
+                    <p class="color-gray">Land:
+                        {{country}}
+                    </p>
 
-  </body>
+                    <div class="list-block accordion-list">
+                        <ul>
+                            <li class="accordion-item">
+                                <a href="" class="item-link item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">Projektbeschreibung</div>
+                                    </div>
+                                </a>
+                                <div class="accordion-item-content">
+                                    <div style="padding:0 15px">
+                                        {{description}}
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+
+            </div>
+
+        </div>
+        <div style="margin:10px">
+            <p>
+                <a href="#" class="button button-round active apply" onclick="apply({{id}})"><i class="fa fa-envelope-o"></i>&nbsp;Bewerbung</a>
+            </p>
+            <p>
+                <a href="#" class="button button-round active wishlist" onclick="addWishlist({{id}})"><i class="fa fa-thumb-tack"></i>&nbsp;Merken</a>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script type="text/javascript" src="js/framework7.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+</body>
 </html>

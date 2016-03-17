@@ -330,3 +330,8 @@ div.ks-demo-lazy {
 .ks-facebook-card .card-content-inner {
     padding: 15px 10px;
 }
+
+.list-block textarea{
+    padding: 15px;
+    font-size: 12px;
+}
