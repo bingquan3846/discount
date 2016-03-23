@@ -12,7 +12,7 @@
         <ul>
             <li class="accordion-item"><a href="#" class="item-link item-content">
                 <div class="item-inner">
-                    <div class="item-title">Suchfilter</div>
+                    <div class="item-title"><strong>Suchfilter</strong></div>
                 </div></a>
                 <div class="accordion-item-content">
                     <div class="list-block">
@@ -37,7 +37,7 @@
             </li>
             <li class="accordion-item"><a href="#" class="item-link item-content">
                 <div class="item-inner">
-                    <div class="item-title">Kategorien</div>
+                    <div class="item-title"><strong>Kategorien</strong></div>
                 </div></a>
                 <div class="accordion-item-content">
                     <div class="list-block">
@@ -54,7 +54,7 @@
                             <li>
                                 <label class="label-checkbox item-content">
                                     <input type="checkbox" name="category" value="2"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                    <div class="item-media"><i class="icon icon-form-checkbox" checked="checked"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title"> Grafik, Content, Medien</div>
                                     </div>
@@ -63,7 +63,7 @@
                             <li>
                                 <label class="label-checkbox item-content">
                                     <input type="checkbox" name="category" value="3"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                    <div class="item-media"><i class="icon icon-form-checkbox" checked="checked"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title"> IT-Infrastruktur</div>
                                     </div>
@@ -72,7 +72,7 @@
                             <li>
                                 <label class="label-checkbox item-content">
                                     <input type="checkbox" name="category" value="4"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                    <div class="item-media"><i class="icon icon-form-checkbox" checked="checked"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">Beratung & Management</div>
                                     </div>
@@ -81,7 +81,7 @@
                             <li>
                                 <label class="label-checkbox item-content">
                                     <input type="checkbox" name="category" value="5" />
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                    <div class="item-media"><i class="icon icon-form-checkbox" checked="checked"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">SAP</div>
                                     </div>
@@ -90,7 +90,7 @@
                             <li>
                                 <label class="label-checkbox item-content">
                                     <input type="checkbox" name="category" value="6"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                    <div class="item-media"><i class="icon icon-form-checkbox" checked="checked"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">Ingenieurwesen</div>
                                     </div>
@@ -102,101 +102,114 @@
             </li>
             <li class="accordion-item"><a href="#" class="item-link item-content">
                 <div class="item-inner">
-                    <div class="item-title">Ortsfilter</div>
+                    <div class="item-title"><strong>Ortsfilter</strong></div>
                 </div></a>
                 <div class="accordion-item-content">
                     <div class="list-block">
                         <ul>
-                            <li>
-                                <label class="label-checkbox item-content">
-                                    <input type="checkbox" name="place" value="108"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                            <li><a href="#" class="item-link smart-select" data-navbar-theme="white">
+                                <!-- "multiple" attribute for multiple select-->
+                                <select name="state" multiple >
+                                    <!-- options grouped within "optgroup" tag-->
+                                    <optgroup label="Bundesland">
+                                        <option value="108" >Brandenburg</option>
+                                        <option value="109" >Berlin</option>
+                                        <option value="110" >Baden-Württemberg</option>
+                                        <option value="111" >Bayern</option>
+                                        <option value="112" >Bremen</option>
+                                        <option value="113" >Hessen</option>
+                                        <option value="114" >Hamburg</option>
+                                        <option value="115" >Mecklenburg-Vorpommern</option>
+                                        <option value="117" >Nordrhein-Westfalen</option>
+                                        <option value="118" >Rheinland-Pfalz</option>
+                                        <option value="119" >Schleswig-Holstein</option>
+                                        <option value="120" >Saarland</option>
+                                        <option value="121" >Sachsen</option>
+                                        <option value="122" >Sachsen-Anhalt</option>
+                                        <option value="123" >Thüringen</option>
+                                    </optgroup>
+                                </select>
+                                <div class="item-content">
                                     <div class="item-inner">
-                                        <div class="item-title">Brandenburg</div>
+                                        <div class="item-title">Bundesland</div>
                                     </div>
-                                </label>
+                                </div></a>
                             </li>
                             <li>
-                                <label class="label-checkbox item-content">
-                                    <input type="checkbox" name="place" value="109"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title"> Berlin </div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="label-checkbox item-content">
-                                    <input type="checkbox" name="place" value="110"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title">Baden-Württemberg</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="label-checkbox item-content">
-                                    <input type="checkbox" name="place" value="111" />
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title">Bayern</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="label-checkbox item-content">
-                                    <input type="checkbox" name="place" value="112"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title">Bremen</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="label-checkbox item-content">
-                                    <input type="checkbox" name="place" value="113"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title">Hessen</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="label-checkbox item-content">
-                                    <input type="checkbox" name="place" value="114"/>
-                                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title">Hamburg</div>
-                                    </div>
-                                </label>
+                                <a href="#" class="item-link smart-select" data-navbar-theme="white">
+                                    <!-- "multiple" attribute for multiple select-->
+                                    <select name="country" multiple>
+                                        <!-- options grouped within "optgroup" tag-->
+                                        <optgroup label="Länder">
+                                            <option value="1"> Deutschland</option>
+                                            <option value="2"> Österreich</option>
+                                            <option value="3"> Schweiz</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">Länder</div>
+                                        </div>
+                                    </div></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </li>
-            <li class="accordion-item"><a href="#" class="item-link item-content">
+            <li class="accordion-item"><a href="#" class="item-content item-link">
                 <div class="item-inner">
-                    <div class="item-title">Bewerbungsvorlage</div>
+                    <div class="item-title"><strong>Bewerbungsvorlage</strong></div>
                 </div></a>
                 <div class="accordion-item-content">
-                <textarea name="template">
+                    <div class="content-block">
+                        <div class="">
+                            <textarea name="template" >
 [Anrede],
 ich interessiere mich für die ausgeschriebene Position. Bitte
 nehmen Sie zu mir Kontakt auf um alles weitere zu besprechen.
-Mit freundlichen Grüßen<br/>{NAME DES USERS} (ersetzen wir)
-                </textarea>
-                    <label class="label-checkbox item-content">
-                        <input type="checkbox" name="attachment" value="114"/>
-                        <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title">Anhänge versenden</div>
+Mit freundlichen Grüßen
+{NAME DES USERS}
+                            </textarea>
                         </div>
-                    </label>
+                        <div class="">
+                            <label class="label-checkbox item-content">
+                                <input type="checkbox" name="attachment" value="1"/>
+                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">Anhänge versenden</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </li>
         </ul>
+
     </div>
 
     </form>
+    <div class="content-block">
+        <strong>Impressum</strong>
+        <p>freelancermap GmbH <br>
+            Pretzfelder Straße 7-11<br>
+            D-90425 Nürnberg<br>
+            Deutschland</p>
+
+        <p>
+            Tel.: +49 - 1805 - 47 11 74 26 (14 Ct./Min. aus dem dt. Festnetz,<br>
+            max. 42 Ct./Min. aus dem Mobilnetz)<br>
+            Fax: +49 - 911 - 99 39 94 02</p>
+        <p>
+            E-Mail: office@freelancermap.de</p>
+
+        <p>
+            Vertretungsberechtigter Geschäftsführer: Michael Amtmann </p>
+        <p>
+            Amtsgericht: Nürnberg<br>
+            Firmensitz: Nürnberg<br>
+            HRB: 27944</p>
+
+        USt.ID: DE260465872<br>
+    </div>
 </div>
 </div>
