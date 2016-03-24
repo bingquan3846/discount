@@ -272,5 +272,118 @@ function welcomeScreen(myapp){
 }
 
 
+Framework7.prototype.plugins.freelancermap = function(app, globalPluginParams){
+    'use strict';
+    var $$ = Dom7;
+    var Freelancermap;
 
+    Freelancermap = function(options){
+
+        var self = this;
+        var slider;
+        var domain = "http://192.168.119.114/";
+        var loginUrl = domain + "/index.php?module=api&func=login";
+        var projectsUrl = domain + "/index.php?module=api&func=projects&local=0";
+        var applyUrl = domain + "/index.php?module=api&func=apply";
+        var wishListUrl = domain + "/index.php?module=api&func=wishList";
+        var projectContentUrl = domain + "/index.php?module=api&func=showContent";
+        var pageNum = 1;
+        var projectsTemplate = $$('script#projects').html();
+        var compiledProjectsTemplate = Template7.compile(projectsTemplate);
+
+        function initSlider(){
+            slider = new Swiper('.swiper-container', {
+                loop: false,
+                onSlideNextEnd: function(slider, event){
+                    if(slider.swipeDirection == 'next' && slider.isEnd){
+                        self.getProjects(pageNum,true);
+                    }
+                }
+            });
+        }
+
+        function refreshSlider(){
+            pageNum = 1;
+            slider.removeAllSlides();
+            self.getProjects(pageNum, false);
+            slider.slideTo(0);
+        }
+
+        function getProjects(page, next){
+            app.showIndicator();
+            var formData = app.formToJSON('#settings-form');
+            var positiveKeywords = app.formToJSON('#positiveKeywords');
+            var negativeKeywords = app.formToJSON('#negativeKeywords');
+            $$.ajax({
+                url: projectsUrl + '&uid=' + app.ls['uid'] + '&page=' + page + '&token=' + app.ls['token'],
+                type: "GET",
+                data: {categoryPlace: formData, keywords: [positiveKeywords , negativeKeywords] },
+                success: function(data, textStatus ){
+                    if(data != ''){
+                        data = JSON.parse(data);
+                        app.hideIndicator();
+                        if(data.projects.length){
+                            var previousSize = slider.slides.length;
+                            var itemHTML = compiledProjectsTemplate({
+                                    projects: data.projects}
+                            );
+                            slider.appendSlide(itemHTML);
+                            slider.updateSlidesSize();
+                            var currentSize = slider.slides.length;
+                            //go to next page when none displayed
+                            if(previousSize == currentSize){
+                                pageNum = pageNum + 1;
+                                getProjects(pageNum,next);
+                            }
+                            pageNum++;
+                        }else{
+                            if(!next){
+                                app.alert('Nichts','Freelancermap');
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function welcomeScreen(){
+            var options = {
+                    'bgcolor': '#0da6ec',
+                    'fontcolor': '#fff',
+                    'onOpened': function () {
+                        console.log("welcome screen opened");
+                    },
+                    'onClosed': function () {
+                        refreshSlider();
+                    }
+                },
+                welcomescreen_slides = [
+                    {
+                        id: 'slide0',
+                        picture: '<div class="tutorialicon">♥</div>',
+                        text: '<p>Herzlich Willkommen zu unserer App. Hier finden Sie aktuelle Projektangebote und können sich mit nur einem Klick bewerben.</p><p>Unter dem Punkt "Einstellungen" können Sie einen Suchfilter für die Projekte setzen und einen Standardtext angeben mit dem Sie sich auf die Projekte bewerben.</p>'
+                    },
+                    {
+                        id: 'slide2',
+                        picture: '<div class="tutorialicon">☆</div>',
+                        text: '<a class="tutorial-close-btn" href="#">start</a>'
+                    }
+                ],
+                welcomescreen = app.welcomescreen(welcomescreen_slides, options);
+
+            $$(document).on('click', '.tutorial-close-btn', function () {
+                welcomescreen.close();
+            });
+        }
+
+        return self;
+
+    }
+
+    app.freelancermap = function(options){
+        return new Freelancermap(options);
+    }
+
+
+}
 
