@@ -14,24 +14,21 @@
 
   <ion-side-menu side="left" >
     <ion-header-bar class="bar-stable bar-dark">
-      <h1 class="title">Dash</h1>
+      <h1 class="title">导航</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list class="list">
-        <ion-item menu-close ng-click="login()">
-          Login
+        <ion-item menu-close ng-click="login()" id="login">
+          登录
         </ion-item>
-       <!-- <ion-item menu-close href="#/app/search">
-          Search
+       <ion-item menu-close href="#/app/me" id="myInfo">
+          我的信息
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
-        </ion-item>-->
-        <ion-item menu-close href="#/app/projects">
-          Projects
+        <ion-item menu-close href="#/app/products">
+          促销产品
         </ion-item>
-         <ion-item menu-close href="#/app/slideProjects">
-          slide Projects
+         <ion-item menu-close href="#/app/activities">
+          附近组团
         </ion-item>
       </ion-list>
     </ion-content>

@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
         }, 1000);
     }else{
         $scope.modal.show();
-        $scope.error = 'wrong username or password!';
+        $scope.error = '用户名或者密码错误';
     }
 
     // Simulate a login delay. Remove this and replace with your login
@@ -49,16 +49,16 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ProjectsCtrl', function($scope, Projects, $ionicSideMenuDelegate) {
+.controller('ProductsCtrl', function($scope, Products, $ionicSideMenuDelegate) {
     $ionicSideMenuDelegate.canDragContent(false);
-    $scope.projects = Projects.all();
+    $scope.products = Products.all();
         $scope.deRefresh = function(){
             console.log('refresh');
-            $newItem = Projects.all();
-            $scope.projects = $scope.projects.concat($newItem);
+            $newItem = Products.all();
+            $scope.products = $scope.products.concat($newItem);
         }
 })
 
-.controller('ProjectCtrl', function($scope, $stateParams, Projects) {
-    $scope.project = Projects.get($stateParams.projectId);
+.controller('ProductCtrl', function($scope, $stateParams, Products) {
+    $scope.product = Products.get($stateParams.productId);
 });

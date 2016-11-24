@@ -1,8 +1,8 @@
 angular.module('starter.services', [])
 
-    .factory('Projects', function() {
+    .factory('Products', function() {
 
-        var projects = [{
+        var products = [{
             id: 0,
             title: 'Netzwerkarchitekt (m/w)',
             description: 'Das Handy klingelt, eine unbekannt Nummer wird angezeigt! Ein neuer Kunde? Wie reagiert man bei einem ersten Kundengespräch? '
@@ -26,13 +26,13 @@ angular.module('starter.services', [])
 
         return {
             all: function() {
-                return projects;
+                return products;
             },
 
-            get: function(projectId) {
-                for (var i = 0; i < projects.length; i++) {
-                    if (projects[i].id === parseInt(projectId)) {
-                        return projects[i];
+            get: function(productId) {
+                for (var i = 0; i < products.length; i++) {
+                    if (products[i].id === parseInt(productId)) {
+                        return products[i];
                     }
                 }
                 return null;
