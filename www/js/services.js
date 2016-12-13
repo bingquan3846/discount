@@ -38,4 +38,29 @@ angular.module('starter.services', [])
                 return null;
             }
         };
+    })
+    .factory('LoginService', function($http){
+        return {
+            request: function(username,password){
+                  return  $http({url:'http://magento.localhost:9090/rest/V1/integration/admin/token?username='+username+'&password='+password, method: 'POST'});
+            },
+            getToken: function(){
+                if(sessionStorage.userToken){
+                    return sessionStorage.userToken;
+                }else{
+                    return 0;
+                }
+            },
+            switchMenu: function(){
+                if(sessionStorage.userToken){
+                    angular.element(document.querySelector('#login')).css('display', 'none');
+                    angular.element(document.querySelector('#myInfo')).css('display', 'block');
+                    angular.element(document.querySelector('#logout')).css('display', 'block');
+                }else {
+                    angular.element(document.querySelector('#login')).css('display', 'block');
+                    angular.element(document.querySelector('#myInfo')).css('display', 'none');
+                    angular.element(document.querySelector('#logout')).css('display', 'none');
+                }
+            }
+        }
     });
