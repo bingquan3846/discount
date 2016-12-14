@@ -74,6 +74,13 @@ angular.module('starter.services', [])
                         "Authorization": 'Bearer ' + sessionStorage.userToken
                     }
                 });
+            },
+            getProducts :function(){
+                return $http.get(ApiEndpoint.url + "/V1/categories/3/products", {
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.userToken
+                    }
+                });
             }
         }
     });

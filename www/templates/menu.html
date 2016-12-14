@@ -9,11 +9,23 @@
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
+      <ion-tabs class="tabs-positive tabs-icon-top">
+
+          <ion-tab title="首页" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" >
+              <ion-nav-view name="tab-me"></ion-nav-view>
+          </ion-tab>
+          <ion-tab title="促销" icon-on="ion-ios-star" icon-off="ion-ios-star-outline" >
+              <ion-nav-view name="tab-products"></ion-nav-view>
+          </ion-tab>
+          <ion-tab title="淘友" icon-on="ion-ios-location" icon-off="ion-ios-location-outline" >
+              <ion-nav-view name="tab-search"></ion-nav-view>
+          </ion-tab>
+
+      </ion-tabs>
   </ion-side-menu-content>
 
   <ion-side-menu side="left" >
-    <ion-header-bar class="bar-stable bar-dark">
+    <ion-header-bar class="bar-stable bar-calm">
       <h1 class="title">导航</h1>
     </ion-header-bar>
     <ion-content>
@@ -30,7 +42,7 @@
         <ion-item menu-close href="#/app/products">
           促销产品
         </ion-item>
-         <ion-item menu-close href="#/app/activities">
+         <ion-item menu-close href="#/app/search">
           附近组团
         </ion-item>
       </ion-list>

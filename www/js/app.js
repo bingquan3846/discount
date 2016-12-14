@@ -38,55 +38,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'AppCtrl'
   })
       .state('app.me', {
-        url: '/me',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/me.html',
-            controller:'MeCtrl'
+          cache: false,
+          url: '/me',
+          views: {
+              'tab-me': {
+                  templateUrl: 'templates/me.html',
+                  controller:'MeCtrl'
+              }
           }
-        }
       })
-
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
+      .state('app.search', {
+          cache: false,
+          url: '/search',
+          views: {
+              'tab-search': {
+                  templateUrl: 'templates/search.html',
+                  controller:'SearchCtrl'
+              }
+          }
+      })
     .state('app.products', {
       url: '/products',
       views: {
-        'menuContent': {
+        'tab-products': {
           templateUrl: 'templates/products.html',
           controller: 'ProductsCtrl'
         }
       }
     })
-  .state('app.slideProjects', {
-      url: '/slideProjects',
-      views: {
-          'menuContent': {
-              templateUrl: 'templates/slide-box.html',
-              controller: 'ProjectsCtrl'
-          }
-      }
-  })
 
   .state('app.single', {
     url: '/products/:productId',
     views: {
-      'menuContent': {
+      'tab-product': {
         templateUrl: 'templates/product.html',
         controller: 'ProductCtrl'
       }

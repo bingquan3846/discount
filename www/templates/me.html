@@ -1,5 +1,11 @@
 <ion-view view-title="我的信息">
     <ion-content padding="true" on-drag-left="onGesture('Swipe Left')" >
-     <h2>修改密码，查看收藏，参与的组团</h2>
+     <h2>店铺一览</h2>
+        <h3>类目</h3>
+        <ion-list>
+            <ion-item ng-repeat="category in categories.children_data">
+                {{category.name}}
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
