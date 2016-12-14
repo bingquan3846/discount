@@ -42,9 +42,9 @@ angular.module('starter.services', [])
     .factory('LoginService', function($http){
         return {
             request: function(username,password){
-                  return  $http({url:'http://magento.localhost:9090/rest/V1/integration/admin/token?username='+username+'&password='+password, method: 'POST'});
+                  return  $http.post('http://magento.localhost:9090/rest/V1/integration/admin/token?username='+username+'&password='+password);
             },
-            getToken: function(){
+            getProfile: function(){
                 if(sessionStorage.userToken){
                     return sessionStorage.userToken;
                 }else{
@@ -61,6 +61,20 @@ angular.module('starter.services', [])
                     angular.element(document.querySelector('#myInfo')).css('display', 'none');
                     angular.element(document.querySelector('#logout')).css('display', 'none');
                 }
+            }
+        }
+    })
+    .factory('RestMagento', function($http){
+        var baseUrl = "http://magento.localhost:9090/rest";
+
+        return {
+            getCategories: function(){
+
+                return $http.get(baseUrl + "/V1/categories", {
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.userToken
+                    }
+                });
             }
         }
     });

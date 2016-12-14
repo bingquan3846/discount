@@ -63,6 +63,12 @@ angular.module('starter.controllers', [])
 
   };
 })
+.controller('MeCtrl', function($scope, LoginService, RestMagento){
+    LoginService.switchMenu();
+    RestMagento.getCategories().success(function(response){
+        console.log(response);
+    });
+})
 
 .controller('ProductsCtrl', function($scope, Products, $ionicSideMenuDelegate,LoginService) {
 

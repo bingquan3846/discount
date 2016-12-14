@@ -20,17 +20,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+
+
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $httpProvider.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.userToken;
+  $httpProvider.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
   $stateProvider
-
     .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+      .state('app.me', {
+        url: '/me',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/me.html',
+            controller:'MeCtrl'
+          }
+        }
+      })
 
   .state('app.search', {
     url: '/search',
