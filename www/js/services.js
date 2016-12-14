@@ -39,10 +39,10 @@ angular.module('starter.services', [])
             }
         };
     })
-    .factory('LoginService', function($http){
+    .factory('LoginService', function($http, ApiEndpoint){
         return {
             request: function(username,password){
-                  return  $http.post('http://magento.localhost:9090/rest/V1/integration/admin/token?username='+username+'&password='+password);
+                  return  $http.post(ApiEndpoint.url + '/V1/integration/admin/token?username='+username+'&password='+password);
             },
             getProfile: function(){
                 if(sessionStorage.userToken){
@@ -64,13 +64,12 @@ angular.module('starter.services', [])
             }
         }
     })
-    .factory('RestMagento', function($http){
-        var baseUrl = "http://magento.localhost:9090/rest";
+    .factory('RestMagento', function($http, ApiEndpoint){
 
         return {
             getCategories: function(){
 
-                return $http.get(baseUrl + "/V1/categories", {
+                return $http.get(ApiEndpoint.url + "/V1/categories", {
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.userToken
                     }
